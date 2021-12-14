@@ -17,6 +17,8 @@
 		<java.version>1.8</java.version>
 	</properties>
 	<dependencies>
+
+		<!-- jpa -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -35,6 +37,8 @@
 			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+
+		<!-- mariadb -->
 		<dependency>
 			<groupId>org.mariadb.jdbc</groupId>
 			<artifactId>mariadb-java-client</artifactId>
@@ -57,6 +61,9 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<!-- 버전추가 아래에러 원인-->
+				<version>${project.parent.version}</version>
+				<!--Error:(63, 17) Plugin 'org.springframework.boot:spring-boot-maven-plugin:' not found -->
 				<configuration>
 					<excludes>
 						<exclude>
